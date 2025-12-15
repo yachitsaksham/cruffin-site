@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cruffin Premium | The Art of Taste</title>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+      <div class="navbar-inner">
+        <div class="logo">
+          <span class="logo-main">CRUFFIN</span>
+          <span class="logo-sub">Premium</span>
+        </div>
+        <div class="nav-tabs">
+          <a href="#cakes">Cakes</a>
+          <a href="#gallery">Visual Diary</a>
+          <a href="#heritage">Heritage</a>
+          <a href="#contact" class="cta">Inquire</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <h2 class="hero-pretitle">Signature Cakes & Signature Pastries</h2>
+      <span class="hero-tag">EST. 2025</span>
+      <h1 class="hero-title">Redefining<br /><span>Indulgence</span></h1>
+      <p class="hero-subtitle">
+        Where French tradition meets modern innovation.<br />
+        Experience the art of the Cruffin.
+      </p>
+      <a href="#cakes" class="hero-btn">Discover More</a>
+    </section>
+
+    <!-- ================= CAKES ================= -->
+    <section id="cakes" class="section soft-bg">
+      <span class="section-label">Our Cakes</span>
+      <h2 class="section-title">Signature Cakes</h2>
+
+      <div class="cakes-grid">
+        <div class="cake-card">
+          <img
+            src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop"
+          />
+          <div class="cake-info">
+            <h3>Chocolate Truffle</h3>
+            <p>Rich cocoa & ganache</p>
+            <span class="price">₹1,200</span>
+          </div>
+        </div>
+
+        <div class="cake-card">
+          <img
+            src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?q=80&w=1200&auto=format&fit=crop"
+          />
+          <div class="cake-info">
+            <h3>Red Velvet</h3>
+            <p>Cream cheese frosting</p>
+            <span class="price">₹1,350</span>
+          </div>
+        </div>
+
+        <div class="cake-card">
+          <img
+            src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?q=80&w=1200&auto=format&fit=crop"
+          />
+          <div class="cake-info">
+            <h3>Blueberry Cheesecake</h3>
+            <p>Fresh blueberries</p>
+            <span class="price">₹1,650</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GALLERY ================= -->
+    <section id="gallery" class="section soft-bg">
+      <span class="section-label">Visual Diary</span>
+      <h2 class="section-title">Signature Pastries</h2>
+      <div class="gallery-grid">
+        <img
+          src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?q=80&w=1200&auto=format&fit=crop"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?q=80&w=1200&auto=format&fit=crop"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1626803775151-61d756612f97?q=80&w=1200&auto=format&fit=crop"
+        />
+      </div>
+    </section>
+
+    <!-- ================= HERITAGE ================= -->
+    <section id="heritage" class="section dark-premium">
+      <span class="section-label gold">Our Heritage</span>
+      <h2 class="section-title light">
+        More than just a pastry.<br />It’s an <span>experience</span>.
+      </h2>
+      <p class="section-text light">
+        Cruffin Premium blends French croissant layers with modern
+        craftsmanship, using world-class ingredients and obsessive attention to
+        detail.
+      </p>
+
+      <div class="premium-stats">
+        <div><strong>24h</strong><span>Proofing Time</span></div>
+        <div><strong>100%</strong><span>Handmade</span></div>
+        <div><strong>27</strong><span>Layers</span></div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="section soft-bg">
+      <h2 class="section-title">Begin Your Journey</h2>
+
+      <form class="contact-form" id="contact-form">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit">Send Inquiry</button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <p><strong>Cruffin Premium</strong></p>
+      <p>© Cruffin Premium</p>
+    </footer>
+
+    <!-- ================= EMAILJS ================= -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      emailjs.init("uKgdQBHqHQbnQn2rt");
+
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          emailjs.sendForm("service_m0g062y", "template_mv5rmnt", this).then(
+            () => alert("Thank you! Your inquiry has been sent."),
+            () => alert("Failed to send inquiry. Please try again.")
+          );
+        });
+    </script>
+
+    <!-- ================= CHATBOT ================= -->
+    <button id="chat-toggle">💬</button>
+
+    <div id="chatbox">
+      <div class="chat-header">
+        <span>cruffin • Concierge</span>
+        <button id="chat-close">✕</button>
+      </div>
+
+      <div id="chat-messages" class="chat-messages">
+        <div class="bot">
+          👋 Welcome to Cruffin Premium! Ask me about cakes or prices.
+        </div>
+      </div>
+
+      <div class="chat-input">
+        <input id="chat-input" placeholder="Ask me anything…" />
+        <button id="send-btn">Send</button>
+      </div>
+    </div>
+
+    <script>
+      const GEMINI_API_KEY = "AIzaSyCdP6IPFUmylWqlAh0lyodJa-w-aMIimrY";
+      const MODEL = "gemini-2.5-flash";
+
+      const responses = {
+        hello: "👋 Hello! How can I help you today?",
+        cakes:
+          "🍰 Chocolate Truffle ₹1,200 | Red Velvet ₹1,350 | Blueberry Cheesecake ₹1,650",
+        "red velvet":
+          "❤️ Red Velvet Cake costs ₹1,350 with cream cheese frosting.",
+        chocolate: "🍫 Chocolate Truffle Cake is ₹1,200.",
+        blueberry: "🫐 Blueberry Cheesecake costs ₹1,650.",
+        price: "💰 Cakes range between ₹1,200 – ₹1,650.",
+        default: "😊 I can help with cakes, prices, or recommendations.",
+      };
+
+      const chatToggle = document.getElementById("chat-toggle");
+      const chatbox = document.getElementById("chatbox");
+      const closeBtn = document.getElementById("chat-close");
+      const sendBtn = document.getElementById("send-btn");
+      const input = document.getElementById("chat-input");
+      const messages = document.getElementById("chat-messages");
+
+      chatToggle.onclick = () => (chatbox.style.display = "flex");
+      closeBtn.onclick = () => (chatbox.style.display = "none");
+
+      sendBtn.onclick = async () => {
+        const text = input.value.trim();
+        if (!text) return;
+
+        messages.innerHTML += `<div class="user">${text}</div>`;
+        input.value = "";
+
+        try {
+          const res = await fetch(
+            `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${GEMINI_API_KEY}`,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                contents: [
+                  {
+                    parts: [
+                      {
+                        text: `You are cruffin, a premium bakery concierge.
+Menu: Chocolate Truffle ₹1200, Red Velvet ₹1350, Blueberry Cheesecake ₹1650.
+User: ${text}`,
+                      },
+                    ],
+                  },
+                ],
+              }),
+            }
+          );
+
+          const data = await res.json();
+          const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (!reply) throw new Error("Gemini failed");
+
+          messages.innerHTML += `<div class="bot">${reply}</div>`;
+        } catch {
+          const key = Object.keys(responses).find((k) =>
+            text.toLowerCase().includes(k)
+          );
+          messages.innerHTML += `<div class="bot">${
+            responses[key] || responses.default
+          }</div>`;
+        }
+
+        messages.scrollTop = messages.scrollHeight;
+      };
+    </script>
+  </body>
+</html>
